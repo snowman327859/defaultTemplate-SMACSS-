@@ -1,0 +1,22 @@
+@mixin listNormal($color) {
+	list-style-type: none;
+	text-decoration: none;
+	color: $color;
+}
+@mixin backgroundImage($img, $position, $repeat, $width, $height, $top, $left) {
+	background-image: $img;
+	background-position: $position;
+	background-repeat: $repeat;
+	width: $width;
+	height: $height;
+	position: absolute;
+	top: $top;
+	left: $left;
+	@each $prefix in $prefixList {
+		#{$prefix}background-size: 50% auto;
+	}
+}
+@mixin rem($size) {
+	font-size: $size + px;
+	font-size: ($size/ 16) + rem;
+}
